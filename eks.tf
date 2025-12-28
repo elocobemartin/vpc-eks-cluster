@@ -3,7 +3,7 @@ module "eks" {
   version = "~> 21.0"
 
   name               = "my-cluster"
-  kubernetes_version = "1.33"
+  kubernetes_version = "1.30"
 
   # Optional
   endpoint_public_access = true
@@ -12,7 +12,7 @@ module "eks" {
   vpc_id                   = module.vpc.vpc_id
   subnet_ids               = module.vpc.public_subnets
 
-  # EKS Managed Node Group(s)
+# EKS Managed Node Group(s)
   eks_managed_node_groups = {
     default = {
       instance_types = ["t3.medium"]
