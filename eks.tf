@@ -9,13 +9,13 @@ module "eks" {
   endpoint_public_access = true
   enable_cluster_creator_admin_permissions = true
 
-  vpc_id                   = module.vpc.my-vpc_id
+  vpc_id                   = module.vpc.my-vpc.id
   subnet_ids               = module.vpc.public_subnets
 
   # EKS Managed Node Group(s)
   eks_managed_node_groups = {
     default = {
-      instance_types = t2.medium
+      instance_types = ["t2.medium"]
       min_size     = 2
       max_size     = 6
       desired_size = 2
