@@ -15,7 +15,7 @@ subnet_ids = module.vpc.public_subnets
 # EKS Managed Node Group(s)
   eks_managed_node_groups = {
     default = {
-      instance_types = "t3.medium"
+      instance_types = ["t3.medium"]
       min_size     = 2
       max_size     = 6
       desired_size = 2
